@@ -1,0 +1,75 @@
+:root {
+  --neo-lime: #ccff00;
+  --neo-cyan: #22d3ee;
+  --neo-purple: #a855f7;
+  --neo-pink: #ff00c1;
+  --neo-gold: #ffd700;
+}
+
+@keyframes neo-gradient-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.neo-gradient-text {
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: neo-gradient-shift 8s ease-in-out infinite alternate;
+}
+
+.neo-gradient-text--common {
+  background-image: linear-gradient(90deg, var(--neo-lime), var(--neo-cyan));
+  animation-duration: 12s;
+}
+
+.neo-gradient-text--rare {
+  background-image: linear-gradient(90deg, var(--neo-lime), var(--neo-cyan), var(--neo-purple));
+  animation-duration: 9s;
+}
+
+.neo-gradient-text--legendary {
+  background-image: linear-gradient(90deg, var(--neo-gold), var(--neo-pink), var(--neo-purple));
+  animation-duration: 6s;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 193, 0.35));
+}
+
+.neo-border-common,
+.neo-border-rare,
+.neo-border-legendary {
+  background-size: 200% 200%;
+  animation: neo-gradient-shift 10s ease-in-out infinite alternate;
+}
+
+.neo-border-common {
+  background-image: linear-gradient(90deg, rgba(204, 255, 0, 0.9), rgba(34, 211, 238, 0.9));
+  animation-duration: 16s;
+}
+
+.neo-border-rare {
+  background-image: linear-gradient(90deg, rgba(204, 255, 0, 0.9), rgba(34, 211, 238, 0.9), rgba(168, 85, 247, 0.9));
+  animation-duration: 10s;
+}
+
+.neo-border-legendary {
+  background-image: linear-gradient(90deg, rgba(255, 215, 0, 0.95), rgba(255, 0, 193, 0.95), rgba(168, 85, 247, 0.95));
+  animation-duration: 7s;
+  box-shadow: 0 0 30px rgba(255, 0, 193, 0.25);
+}
+
+.neo-borderimg-common {
+  border-image: linear-gradient(90deg, rgba(204, 255, 0, 0.95), rgba(34, 211, 238, 0.9), rgba(168, 85, 247, 0.9)) 1;
+  box-shadow:
+    0 0 18px rgba(204, 255, 0, 0.22),
+    0 0 26px rgba(34, 211, 238, 0.16);
+}
+
+.neo-top-hud-hidden,
+div[class~="h-8"][class~="bg-black/80"][class~="border-b"][class~="border-gray-800"][class~="select-none"] {
+  display: none !important;
+}
+
+.neo-rarity-common { }
+.neo-rarity-rare { }
+.neo-rarity-legendary { }

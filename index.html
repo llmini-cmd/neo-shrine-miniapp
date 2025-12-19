@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>NEO SHRINE // TOKYO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Rajdhani:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --neon-lime: #ccff00;
+        --deep-black: #050505;
+        --alert-red: #ff0055;
+      }
+      body {
+        background-color: var(--deep-black);
+        color: white;
+        font-family: 'Rajdhani', sans-serif;
+        overflow: hidden;
+        overscroll-behavior: none;
+      }
+      .font-jp {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      
+      /* CRT Scanline */
+      .scanlines {
+        background: linear-gradient(
+          to bottom,
+          rgba(255,255,255,0),
+          rgba(255,255,255,0) 50%,
+          rgba(0,0,0,0.2) 50%,
+          rgba(0,0,0,0.2)
+        );
+        background-size: 100% 4px;
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.4;
+      }
+
+      /* COIN STREAM EFFECT */
+      .coin-stream {
+        position: absolute;
+        width: 4px;
+        background: linear-gradient(to top, var(--neon-lime), transparent);
+        opacity: 0.8;
+        filter: blur(2px);
+      }
+
+      /* SOLID CARD STYLE */
+      .solid-card {
+        background: #000;
+        border: 4px solid var(--neon-lime);
+        box-shadow: 
+          0 0 20px rgba(204, 255, 0, 0.4),
+          inset 0 0 20px rgba(204, 255, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .solid-card::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(204, 255, 0, 0.05) 10px,
+          rgba(204, 255, 0, 0.05) 20px
+        );
+        pointer-events: none;
+      }
+
+      /* KNOT ANIMATION (Musubi) */
+      .rope-knot-left {
+        position: absolute;
+        left: -100%;
+        top: 50%;
+        width: 50%;
+        height: 20px;
+        background: repeating-linear-gradient(45deg, #fff, #fff 10px, #ff0000 10px, #ff0000 20px);
+        transform-origin: right center;
+        animation: tie-left 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+      .rope-knot-right {
+        position: absolute;
+        right: -100%;
+        top: 50%;
+        width: 50%;
+        height: 20px;
+        background: repeating-linear-gradient(-45deg, #fff, #fff 10px, #ff0000 10px, #ff0000 20px);
+        transform-origin: left center;
+        animation: tie-right 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+      @keyframes tie-left {
+        0% { left: -100%; transform: rotate(0deg); }
+        50% { left: 0%; transform: rotate(15deg); }
+        100% { left: 50%; width: 0; opacity: 0; }
+      }
+      @keyframes tie-right {
+        0% { right: -100%; transform: rotate(0deg); }
+        50% { right: 0%; transform: rotate(-15deg); }
+        100% { right: 50%; width: 0; opacity: 0; }
+      }
+
+      /* OMIKUJI CYLINDER SHAPE */
+      .omikuji-cylinder {
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+      }
+
+      /* Glitch Text */
+      .glitch-text {
+        position: relative;
+        animation: glitch-skew 1s infinite linear alternate-reverse;
+      }
+      .glitch-text::before, .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .glitch-text::before {
+        left: 2px;
+        text-shadow: -1px 0 #ff00c1;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+      }
+      .glitch-text::after {
+        left: -2px;
+        text-shadow: -1px 0 #00fff9;
+        clip: rect(44px, 450px, 56px, 0);
+        animation: glitch-anim2 5s infinite linear alternate-reverse;
+      }
+      @keyframes glitch-anim {
+        0% { clip: rect(12px, 9999px, 86px, 0); }
+        100% { clip: rect(67px, 9999px, 16px, 0); }
+      }
+      @keyframes glitch-anim2 {
+        0% { clip: rect(42px, 9999px, 16px, 0); }
+        100% { clip: rect(17px, 9999px, 96px, 0); }
+      }
+      
+      .clip-corner {
+        clip-path: polygon(
+          15px 0, 100% 0, 
+          100% calc(100% - 15px), calc(100% - 15px) 100%, 
+          0 100%, 0 15px
+        );
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
