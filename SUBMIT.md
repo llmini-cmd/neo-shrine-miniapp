@@ -18,7 +18,7 @@ NEO Shrine は、Farcaster上で気軽に遊べるミニゲーム型のおみく
 
 ## デモ
 
-- **アプリURL**: https://example.com  
+- **アプリURL**: https://neo-shrine-miniapp.vercel.app/
 - **スライド**: https://example.com  
 - **デモ動画**(任意): https://example.com  
 
