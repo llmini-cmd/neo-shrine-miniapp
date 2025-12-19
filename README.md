@@ -1,4 +1,4 @@
-# NEO Shrine
+# NEO SHRINE
 
 Farcaster上で遊べる、BASEをお賽銭にした Web3 おみくじゲーム。  
 ゲーム体験・アニメーション・音の反応を通して、おみくじを獲得し、  
