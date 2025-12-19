@@ -1,18 +1,4 @@
 {
-  "frame": {
-    "name": "NEO SHRINE",
-    "version": "1",
-    "iconUrl": "https://neo-shrine-miniapp.vercel.app/icon.png",
-    "homeUrl": "https://neo-shrine-miniapp.vercel.app",
-    "imageUrl": "https://neo-shrine-miniapp.vercel.app/image.png",
-    "buttonTitle": "Open mini app",
-    "splashImageUrl": "https://neo-shrine-miniapp.vercel.app/splash.png",
-    "splashBackgroundColor": "#000000",
-    "webhookUrl": "https://neo-shrine-miniapp.vercel.app/api/webhook",
-    "subtitle": "An Omikuji Experience with Rhythm and Ritual",
-    "description": "NEO SHRINEは、Farcasterを起点に遊べるミニゲーム型のおみくじ体験です。 ユーザーはゲームをプレイし、BASEチェーンのETHを「お賽銭」に見立てて投げることで、 おみくじ結果を獲得します。",
-    "primaryCategory": "games"
-  },
   "accountAssociation": {
     "header": "eyJmaWQiOjEzMjU0MDYsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhFODZCNmI0OTIxMzYyMTlGM2VCMDI3ZTEwMzc1RjNjRTQ4QTFkNWM0In0",
     "payload": "eyJkb21haW4iOiJuZW8tc2hyaW5lLW1pbmlhcHAudmVyY2VsLmFwcCJ9",
@@ -20,10 +6,14 @@
   },
   "frame": {
     "version": "1",
-    "name": "NEO SHRINE // TOKYO",
+    "name": "NEO SHRINE",
     "homeUrl": "https://neo-shrine-miniapp.vercel.app",
     "iconUrl": "https://neo-shrine-miniapp.vercel.app/icon.png",
     "splashImageUrl": "https://neo-shrine-miniapp.vercel.app/icon.png",
     "splashBackgroundColor": "#000000"
+    "webhookUrl": "https://neo-shrine-miniapp.vercel.app/api/webhook",
+    "subtitle": "An Omikuji Experience with Rhythm and Ritual",
+    "description": "NEO SHRINEは、Farcasterを起点に遊べるミニゲーム型のおみくじ体験です。 ユーザーはゲームをプレイし、BASEチェーンのETHを「お賽銭」に見立てて投げることで、 おみくじ結果を獲得します。",
+    "primaryCategory": "games"
   }
 }
