@@ -83,7 +83,7 @@ export const ScreenResult: React.FC<ScreenResultProps> = ({ stats, offering, onR
                       <div className={`absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_70%)] ${auraIntensity}`}></div>
 
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <div className="w-44 h-60 translate-y-2">
+                        <div className="w-32 h-44 translate-y-1">
                           <svg viewBox="0 0 100 160" className="w-full h-full text-white overflow-visible">
                             <defs>
                               <linearGradient id="omikuji-gradient" x1="0" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
@@ -128,11 +128,6 @@ export const ScreenResult: React.FC<ScreenResultProps> = ({ stats, offering, onR
                </div>
             </div>
          </div>
-
-         <div className="absolute bottom-10 inset-x-0 flex flex-col items-center gap-0 z-20">
-            <div className="text-[12px] text-gray-500 font-[900] tracking-[0.6em] uppercase mb-1 italic">
-               RITUAL PERFORMANCE
-            </div>
             
             <div className="flex items-center justify-center gap-3">
                <div className="text-6xl md:text-8xl font-[900] italic text-white tracking-tighter tabular-nums drop-shadow-[0_0_35px_rgba(204,255,0,0.3)]">
