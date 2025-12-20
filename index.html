@@ -173,8 +173,20 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
+<body>
+  <div id="root"></div>
+
+  <!-- 🔽 ここに入れる（ready を呼ぶ） -->
+  <script type="module">
+    import { sdk } from "https://esm.sh/@farcaster/frame-sdk";
+
+    window.addEventListener("load", () => {
+      sdk.actions.ready();
+      console.log("Farcaster Mini App READY");
+    });
+  </script>
+
+  <!-- 既存のReact起動 -->
   <script type="module" src="/index.tsx"></script>
 </body>
 </html>
