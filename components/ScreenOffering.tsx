@@ -180,3 +180,5 @@ export const ScreenOffering: React.FC<ScreenOfferingProps> = ({ onSelect, onBack
     </div>
   </div>
 );
+ };
+export default ScreenOffering;
