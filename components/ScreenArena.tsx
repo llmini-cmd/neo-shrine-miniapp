@@ -120,15 +120,15 @@ export const ScreenArena: React.FC<ScreenArenaProps> = ({ onBack, lang, myItems,
 
       {/* Detail Modal */}
       {selectedItem && (
-        <div className="absolute inset-0 z-50 bg-black flex flex-col p-6 animate-fade-in overflow-y-auto">
+        <div className="absolute inset-x-0 top-6 bottom-6 z-50 bg-black/90 backdrop-blur flex flex-col p-4 animate-fade-in overflow-y-auto max-h^[calc(100vh-3rem)]">
            <button onClick={() => setSelectedItem(null)} className="absolute top-4 right-4 text-gray-500 hover:text-white z-50">
               <X size={28} />
            </button>
            
            <div className="mt-4 flex flex-col items-center">
-              <div className={`w-full max-w-xs p-[3px] clip-corner ${selectedItem.rarity === Rarity.LEGENDARY ? 'neo-border-legendary' : selectedItem.rarity === Rarity.RARE ? 'neo-border-rare' : 'neo-border-common'}`}>
+              <div className={`w-full max-w-xs p-[220px] p-[2px] clip-corner ${selectedItem.rarity === Rarity.LEGENDARY ? 'neo-border-legendary' : selectedItem.rarity === Rarity.RARE ? 'neo-border-rare' : 'neo-border-common'}`}>
                 <div className="bg-black p-1.5 clip-corner relative overflow-hidden">
-                  <img src={selectedItem.imageUrl} className="w-full aspect-[3/4] object-cover clip-corner" alt="Oracle Card" />
+                  <img src={selectedItem.imageUrl} className="w-full aspect-[2/3] object-cover clip-corner" alt="Oracle Card" />
                  
                   {/* Internal Gradient for consistency with revealed card */}
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-b from-transparent via-black/80 to-black pt-16 pb-4 px-5 pointer-events-none">
