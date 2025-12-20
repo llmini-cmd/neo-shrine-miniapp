@@ -15,7 +15,7 @@ export const ScreenGate: React.FC<ScreenGateProps> = ({ onEnter, onViewArena, la
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full relative z-10 p-6 overflow-hidden">
+    <div className="flex flex-col items-center justify-center min-h-[70vh] max-h-[70vh] relative z-10 p-4 overflow-hidden">
       {/* Symmetrical Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(204,255,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(204,255,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
       
