@@ -20,7 +20,7 @@ export const ScreenGate: React.FC<ScreenGateProps> = ({ onEnter, onViewArena, la
       <div className="absolute inset-0 bg-[linear-gradient(rgba(204,255,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(204,255,0,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
       
       {/* Shifted the whole content block up by reducing bottom padding/margin and using a negative translate */}
-      <div className="flex flex-col items-center -translate-y-8">
+      <div className="flex flex-col items-center scale-95 md:scale-100 mt-6">
         <div className="mb-10 text-center relative z-20 group cursor-default">
           {/* Logo Container - Symmetrical */}
           <div className="relative flex justify-center mb-6">
