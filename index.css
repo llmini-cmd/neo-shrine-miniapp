@@ -74,7 +74,7 @@ div[class~="h-8"][class~="bg-black/80"][class~="border-b"][class~="border-gray-8
 .neo-rarity-rare { }
 .neo-rarity-legendary { }
 
-/* --- Farcaster / Desktop safe responsive --- */
+/* ===== UNIVERSAL APP SHELL (NO OVERLAP / SCALE SAFE) ===== */
 html, body {
   width: 100%;
   height: 100%;
@@ -82,32 +82,49 @@ html, body {
   background: #000;
 }
 
-/* root should always fill available space */
+body { min-height: 100svh; }
+
 #root {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+/* 9:16 “基準サイズ” を作る（デザインはこの中で作られてる前提） */
+#root > * {
+  width: 430px;          /* 基準：スマホっぽい幅（ここは好みで 390〜480） */
+  height: 764px;         /* 430 * 16/9 = 764 */
+  aspect-ratio: 9 / 16;
   overflow: hidden;
+  background: #000;
+
+  transform-origin: center;
 }
 
-/* Desktop: keep portrait feeling but scale up nicely */
-@media (min-width: 768px) {
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Use most of the screen, but keep 9:16 */
-  #root {
-    height: min(92vh, 980px);
-    width: calc(min(92vh, 980px) * (9 / 16));
-    max-width: 720px;   /* これで小さすぎ防止＆デカすぎ防止 */
-    max-height: 980px;
+/* 画面が小さい時だけ、縮小して“重なり”を回避する */
+@media (max-width: 480px), (max-height: 820px) {
+  #root > * {
+    /* 画面に合わせて縮小（縦が足りない時に特に効く） */
+    transform: scale(
+      min(
+        1,
+        calc(100vw / 430),
+        calc(100svh / 764)
+      )
+    );
   }
 }
 
-/* Prevent stretched images/canvas */
-img, video, canvas {
-  max-width: 100%;
-  height: auto;
+/* PCでも同じ：大きい画面では拡大しない（崩れ防止） */
+@media (min-width: 481px) and (min-height: 821px) {
+  #root > * {
+    transform: scale(
+      min(
+        1,
+        calc(92vh / 764),
+        calc(92vw / 430)
+      )
+    );
+  }
 }
