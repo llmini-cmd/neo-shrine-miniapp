@@ -138,8 +138,6 @@ export const ScreenResult: React.FC<ScreenResultProps> = ({ stats, offering, onR
                </div>
             </div>
          </div>
-      
-      </div>
     );
   }
 
