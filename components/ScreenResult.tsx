@@ -78,7 +78,7 @@ export const ScreenResult: React.FC<ScreenResultProps> = ({ stats, offering, onR
                  className="neo-border-common p-[3px] clip-corner"
                  style={{ backgroundImage: 'linear-gradient(90deg, var(--neo-lime), var(--neo-cyan))' }}
                >
-                 <div className="w-full aspect-[3/4] p-3 relative bg-black clip-corner">
+                 <div className="w-full aspect-[2/3] p-2 relative bg-black clip-corner">
                    <div className="w-full h-full relative overflow-hidden bg-gray-900 clip-corner">
                       <div className={`absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_0%,transparent_70%)] ${auraIntensity}`}></div>
 
