@@ -138,41 +138,7 @@ export const ScreenResult: React.FC<ScreenResultProps> = ({ stats, offering, onR
                </div>
             </div>
          </div>
-
-         <style>{`
-            @keyframes shake {
-              0%, 100% { transform: rotate(0deg) translate(0, 0); }
-              10% { transform: rotate(3deg) translate(-4px, -2px); }
-              30% { transform: rotate(-3deg) translate(4px, 2px); }
-              50% { transform: rotate(2deg) translate(-2px, 4px); }
-              70% { transform: rotate(-2deg) translate(2px, -4px); }
-              90% { transform: rotate(1deg) translate(-1px, 1px); }
-            }
-            .animate-shake { animation: shake 0.1s infinite; }
-            @keyframes stick-up {
-              0% { transform: translateY(40px); opacity: 0; }
-              20% { opacity: 1; }
-              80% { opacity: 1; }
-              100% { transform: translateY(-160px); opacity: 0; }
-            }
-            .animate-stick-up { animation: stick-up 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards; }
-            @keyframes scan-y {
-               0% { transform: translateY(-10px); }
-               100% { transform: translateY(320px); }
-            }
-            .animate-scan-y { animation: scan-y 2.5s linear infinite; }
-            @keyframes aura-slow {
-               0%, 100% { transform: scale(1); opacity: 0.25; }
-               50% { transform: scale(1.1); opacity: 0.5; }
-            }
-            @keyframes aura-fast {
-               0%, 100% { transform: scale(1.1); opacity: 0.5; }
-               50% { transform: scale(1.5); opacity: 0.8; }
-            }
-            .animate-aura-slow { animation: aura-slow 4s ease-in-out infinite; }
-            .animate-aura-fast { animation: aura-fast 1.2s ease-in-out infinite; }
-            .animate-pulse-fast { animation: pulse 0.8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-         `}</style>
+      
       </div>
     );
   }
