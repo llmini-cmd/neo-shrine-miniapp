@@ -12,7 +12,7 @@
     "splashImageUrl": "https://neo-shrine-miniapp.vercel.app/icon.png",
     "splashBackgroundColor": "#000000",
     "webhookUrl": "https://neo-shrine-miniapp.vercel.app/api/webhook",
-    "subtitle": "An Omikuji Experience with Rhythm and Ritual",
+    "subtitle": "Omikuji Experience with Rhythm and Ritual",
     "description": "NEO SHRINEは、Farcasterを起点に遊べるミニゲーム型のおみくじ体験です。 ユーザーはゲームをプレイし、BASEチェーンのETHを「お賽銭」に見立てて投げることで、 おみくじ結果を獲得します。",
     "primaryCategory": "games"
   }
