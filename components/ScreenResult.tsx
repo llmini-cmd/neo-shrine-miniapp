@@ -192,6 +192,8 @@ export const ScreenResult: React.FC<ScreenResultProps> = ({ stats, offering, onR
               </div>
             </div>
          </div>
+    );
+  }           
 
          <div className="mt-6 flex flex-col gap-4 relative z-20 pb-6">
             <CyberButton onClick={tieTheKnot} className="w-full py-5 bg-lime-400 text-black hover:bg-white hover:text-black hover:shadow-[0_0_35px_#ccff00] border-none">
